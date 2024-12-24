@@ -1,0 +1,27 @@
+已经做到站立不动了。不过触地的力还是很大，且无法下楼梯。
+增加feet_contact_forces = 0.1触地力很大的惩罚
+仅在isaac gym看teacher好像还是触地力有点大？
+
+
+增加碰撞惩罚，collision = -1 ，看能不能下楼梯
+不行，碰撞惩罚太大，遇到楼梯不敢下
+
+collision = -0.5重新试试
+还行，就是身体不水平
+
+增加orientation = -0.5
+惩罚太大了，走楼梯会歪
+
+orertatiion -0.5，改为-0.1
+还行
+
+训练上一个student
+不行，触地力还是很大
+
+go1总重量：11kg左右
+max_contact_force = 80，重新训练teacher
+
+训练：上一个student，lstm
+
+训练上个teahcer对应的student，不使用lstm，仅使用mlp
+

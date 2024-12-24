@@ -1,0 +1,19 @@
+训练昨天第一个student，使用help decoder
+
+训练昨天第二个student，不使用help decoder
+不是很好
+
+第二个student加上action的decoder loss，修改了decoder结构，由于是将压缩信息扩大，所以隐藏层从低维到高维
+不错
+
+重新训练teacher，feet_slip改为-1，楼梯高度最高设置为0.18，宽度固定为0.265
+
+再增大一点脚滑惩罚，增大到-2
+感觉不如上一个
+
+上一个student
+不是很好
+
+训练上上个student
+
+todo：只训练上楼梯

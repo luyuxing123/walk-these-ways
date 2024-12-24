@@ -1,0 +1,27 @@
+训练去掉raibert，足端力、速度仍然为4
+不好
+
+raibert改为-5.
+增加角速度权重改为1
+不行，楼梯不走了
+
+仅在0.4的台阶上训练
+对于窄的楼梯仍然不是很好
+
+增加
+dof_vel_limits = -1
+torque_limits = -2
+去掉feet_contact_forces
+更改地形，在地形四周各增加一层地形，防止超出地形之外
+还可以，下楼梯效果比较差，上楼梯效果还不错，力也不是很大
+
+碰撞惩罚设置为-0.2
+非常棒！teacher训练的很好
+
+仅使用公司的楼梯宽度（26.5）
+
+训练第二个student，不使用help decoder
+
+训练第二个student，使用help decoder
+
+

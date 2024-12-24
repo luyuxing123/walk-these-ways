@@ -1,0 +1,20 @@
+1.teacher-student
+2.非对称
+3.约束强化学习
+4.teacher-student升级版本：studetn同时训练一个估计器网络估计机身速度、抬腿高度、接触概率，teacher直接获得这些。
+5.加入视觉
+6.加入机械臂
+7.将student的潜在向量进行解码，用解码之后的信息与原始的teacher特权信息计算损失        OK
+8.尝试：将第7个编码之后的损失与原来的损失二者一起使用查看效果。对于actor也是如此，可以将产生的action继续编码与obs进行计算   OK
+9.行为克隆和重构损失权重的问题：Learning robust perceptive locomotion for quadrupedal robots in the wild. 设置的是1和0.5.创新？
+10.teacher和student每一轮与环境交互的数量
+11.不使用lstm，仅使用mlp   OK
+13.更改adaptation网路结构，现在隐藏层为256*128
+14.创新点 ：使用相同的代码，对于不同的机器狗，仅需提供urdf，无需任何调参即可正常训练（约束强化学习）
+15.将楼梯的宽度和高度作为特权信息输入    OK
+
+
+todo：使用方向控制，不使用位置控制
+todo：加上压缩后的损失函数，两个一起作为损失函数  OK
+todo：修改地形，student使用随机地形，不使用课程   OK
+todo:解码器和编码器的隐藏层架构是否需要减小？解码器的隐藏层是否需要从小到大

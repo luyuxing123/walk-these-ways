@@ -1,0 +1,13 @@
+接着昨天的，修改奖励函数权重，重新训练
+orientation = 0（让机身尽可能水平的奖励函数）(之前为-1）
+训练teacher
+训练student
+效果更差，前倾更加严重
+
+重新训练teacher，orientation = -2
+训练上一个student
+
+训练teacher：feet_slip=-1
+训练上一个student
+
+发现训练的teacher效果不是很好，楼梯上无法走的很直，且会踩空

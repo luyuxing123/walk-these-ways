@@ -1,0 +1,8 @@
+使用legged gym论文中使用的reward scale，以及obs（无command）
+使用地形课程策略，地形从0.05～0.23
+效果不好
+
+使用mob+wjz的奖励函数，obs加上command，特权信息只有机身速度以及地形高度
+如果obs不包含clock信息则只能训练出pronk步态
+
+训练：加上所有的特权信息以及恢复mob的obs输入，只有当前的obs作为输入不包括历史数据

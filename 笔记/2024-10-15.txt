@@ -1,0 +1,5 @@
+找到腿抖原因：修改为使用pt文件后，play时使用的act是训练的act，获取action后在一个分布中采样，随机动作，所以腿会抖！！！
+训练了一个teacher一个student，student效果似乎依然不够好
+
+查看wjz的代码发现，训练student时似乎不需要从action分布中采样
+修改上述部分，在transtion中加入teacher act

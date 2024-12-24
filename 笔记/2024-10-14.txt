@@ -1,0 +1,9 @@
+student使用lstm的部分已经完整编写。
+
+训练teacher 平地
+
+训练student 平地（mlp）
+
+训练studetn 平地（lstm）
+
+训练student 平地，加上cirtic loss

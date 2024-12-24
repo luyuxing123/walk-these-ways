@@ -1,0 +1,53 @@
+将前进和转向的奖励函数权重设置为2和1，同时放大一倍
+还是不行，遇到楼梯不走
+
+
+大幅调整奖励函数，减小可能遇到的惩罚
+termination = -0.0
+tracking_lin_vel = 1      #1
+tracking_ang_vel = 0.5     #0.5
+lin_vel_z = -0.5  #-0.02
+ang_vel_xy = -0.05  #-0.001
+orientation = 0 #-1
+orientation_control = 0 #-5.0
+torques = -0.0001  #-0.0001
+dof_vel = -1e-4 #-1e-4
+dof_acc = -2.5e-7
+dof_pos = 0.
+feet_air_time = 0   #0.0
+estimation_bonus = 0.0
+collision = -0.2    #-5.0
+action_rate = -0.01
+tracking_contacts_shaped_force = 4.0    #4.0
+tracking_contacts_shaped_vel = 4.0  #4.0
+raibert_heuristic = -5    #-10
+jump = 0    #10.0
+dof_pos_limits = -10  #-10.0
+action_smoothness_1 = -0.1 #-0.1
+action_smoothness_2 = -0.1 #-0.1
+feet_slip = 0   #0.04
+feet_clearance_cmd_linear = 0   #-30
+tracking_stance_width = -0.0
+tracking_stance_length = -0.0
+trap_static = 0 #-2
+base_height = -1    #-1
+feet_slip = -0.1
+效果很好，只是z轴线速度有点大
+
+
+重新训练teacher，z线速度惩罚改为-2
+效果不错
+
+训练上一个student，效果不错
+走的不是很好，且触地的力很大
+
+增加触地力惩罚，feet_contact_forces = 0.01，训练teacher
+弄错了应该是-0.01
+
+训练上一个student.
+不行，感觉触地速度还是挺大的
+
+训练：去掉上一个增加的奖励函数
+修改desired_contact_states，根据当前command，如果三个方向command都为0，则desired_contact_states均为1，做到可以站立不动
+
+训练上一个student

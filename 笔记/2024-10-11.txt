@@ -1,0 +1,5 @@
+已经完整编写好teacher-student，切换二者在train中。
+训练了一次teacher一次student，teacher上20cm楼梯基本没问题，但是会有腿抖现象
+student腿抖特别严重，几乎无法走路，更不用说上楼梯了
+
+todo：command仅使用速度。彻底解决teacher腿抖问题。可以先在平地尝试

@@ -1,0 +1,20 @@
+完美解决：student act时不能从动作分布中采样（会导致抖腿），直接获取对应的act即可
+基于昨天的teacher训练了一个student，效果还不错（可能训练次数不够），至少不抖腿
+
+加上critic loss重新训练
+果然完全不行
+
+训练teacher 楼梯，频率2～4，还行
+
+
+训练teacher 楼梯，频率1
+
+
+上一个基础上训练student
+效果一般，且实际部署gazebo效果很差
+
+
+频率修改为2，teacher
+
+
+接着上一个的student
